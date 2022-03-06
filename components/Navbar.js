@@ -11,7 +11,7 @@ function Navbar() {
           <Link href="/top-anime">Top Anime</Link>
         </li>
         <li className="flex-1">
-          <Link href="/news">News</Link>
+          <Link href="/news">Anime News</Link>
         </li>
       </ul>
     </nav>
