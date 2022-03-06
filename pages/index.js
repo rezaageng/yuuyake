@@ -1,7 +1,7 @@
 function Home() {
   return (
-    <div className="bg-slate-900 m-auto min-h-screen">
-      <h1 className="text-white text-2xl text-center">
+    <div className="m-auto min-h-screen bg-slate-900">
+      <h1 className="text-center text-2xl text-white">
         Hii! Im here using Next.js!
       </h1>
     </div>
