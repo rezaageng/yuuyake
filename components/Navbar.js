@@ -9,30 +9,17 @@ function Navbar() {
       <ul className="flex gap-1 px-2 py-4 sm:gap-2 sm:px-4 sm:py-6">
         <li
           className={`nav-li ${
-            router.pathname === "/"
-              ? "ring-2 ring-inset ring-rose-700 sm:ring"
-              : ""
+            router.pathname === "/" ? "border-b-2 border-rose-700" : ""
           }`}
         >
           <Link href="/">Home</Link>
         </li>
         <li
           className={`nav-li ${
-            router.pathname === "/top-anime"
-              ? "ring-2 ring-inset ring-rose-700 sm:ring"
-              : ""
+            router.pathname === "/top-anime" ? "border-rose-700" : ""
           }`}
         >
           <Link href="/top-anime">Top Anime</Link>
-        </li>
-        <li
-          className={`nav-li ${
-            router.pathname === "/news"
-              ? "ring-2 ring-inset ring-rose-700 sm:ring"
-              : ""
-          }`}
-        >
-          <Link href="/news">Anime News</Link>
         </li>
       </ul>
     </nav>

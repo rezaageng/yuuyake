@@ -5,6 +5,8 @@
 @layer components {
   .nav-li {
     @apply rounded-lg
+    border-b-2
+    border-transparent
     px-2
     py-1
     duration-150
