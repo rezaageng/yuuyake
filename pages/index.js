@@ -1,9 +1,9 @@
+import Hero from "../components/Hero"
+
 function Home() {
   return (
     <div className="m-auto min-h-screen bg-slate-900">
-      <h1 className="text-center text-2xl text-white">
-        Hii! Im here using Next.js! Yahaha
-      </h1>
+      <Hero />
     </div>
   )
 }
