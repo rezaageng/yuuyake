@@ -22,10 +22,11 @@ function Navbar() {
           <Link href="/top-anime">Top Anime</Link>
         </li>
       </ul>
-      <form className="flex-1">
+      <form className="flex flex-1 flex-col justify-center">
         <input
           type="text"
-          className="h-full w-full rounded-md border-2 border-rose-700 bg-slate-900"
+          className="w-36 self-end rounded-md bg-slate-900 px-2 outline-none outline-rose-900 focus:outline-rose-700"
+          placeholder="Search anime..."
         />
       </form>
     </nav>
