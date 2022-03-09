@@ -7,4 +7,11 @@ const getJikan = async () => {
   return response
 }
 
-export default getJikan
+const getAnime = async (mal_id) => {
+  const request = await axios.get(`https://api.jikan.moe/v4/anime/${mal_id}`)
+  const response = request.data
+
+  return response
+}
+
+export { getJikan, getAnime }
