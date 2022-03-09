@@ -1,12 +1,12 @@
 import axios from "axios"
-import AnimeOngoing from "../components/AnimeOngoing"
+import Anime from "../components/Anime"
 import Hero from "../components/Hero"
 
 function Home({ response }) {
   return (
     <div className="m-auto min-h-screen bg-slate-900">
       <Hero />
-      <AnimeOngoing anime={response} />
+      <Anime anime={response} />
     </div>
   )
 }
