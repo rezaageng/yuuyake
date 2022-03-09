@@ -8,7 +8,7 @@ function Anime({ anime }) {
         {anime.data.map((anm) => (
           <div
             key={anm.mal_id}
-            className="group cursor-pointer overflow-hidden rounded-xl bg-slate-800"
+            className="group cursor-pointer overflow-hidden rounded-xl border-b-2 border-b-transparent bg-slate-800 hover:border-b-rose-700"
           >
             <Image
               src={anm.images.jpg.image_url}
