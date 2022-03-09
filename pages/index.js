@@ -1,6 +1,6 @@
-import axios from "axios"
 import Anime from "../components/Anime"
 import Hero from "../components/Hero"
+import getJikan from "../functions/fetchApi"
 
 function Home({ response }) {
   return (
@@ -12,8 +12,7 @@ function Home({ response }) {
 }
 
 export async function getStaticProps() {
-  const request = await axios.get("https://api.jikan.moe/v4/seasons/now")
-  const response = request.data
+  const response = await getJikan()
 
   return {
     props: { response },
