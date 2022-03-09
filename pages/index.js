@@ -1,6 +1,6 @@
 import Anime from "../components/Anime"
 import Hero from "../components/Hero"
-import getJikan from "../functions/fetchApi"
+import { getJikan } from "../functions/fetchApi"
 
 function Home({ response }) {
   return (
