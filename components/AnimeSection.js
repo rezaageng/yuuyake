@@ -28,9 +28,11 @@ function AnimeSection({ anime }) {
       </div>
       <h1 className="text-center text-2xl font-bold">{anime.title}</h1>
       <div className="mt-2 flex justify-center">
-        <button className="cursor-pointer rounded-lg bg-rose-700 p-2 hover:bg-rose-800 hover:text-slate-400">
-          Watch Trailer
-        </button>
+        <a href={anime.trailer.url} target="_blank" rel="noreferrer">
+          <button className="cursor-pointer rounded-lg bg-rose-700 p-2 hover:bg-rose-800 hover:text-slate-400">
+            Watch Trailer
+          </button>
+        </a>
       </div>
     </div>
   )
