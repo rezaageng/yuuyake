@@ -48,5 +48,3 @@ function AnimeSection({ anime }) {
 }
 
 export default AnimeSection
-
-// absolute -top-10 left-0 right-32 m-auto
