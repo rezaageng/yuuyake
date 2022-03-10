@@ -5,7 +5,7 @@ function Navbar() {
   const router = useRouter()
 
   return (
-    <div className="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-xl">
+    <div className="sticky top-0 z-10 bg-slate-900/90 backdrop-blur-xl">
       <nav className="mx-4 flex max-w-7xl py-4  text-white sm:gap-2  sm:py-6 xl:m-auto">
         <ul className="flex flex-1 gap-1 ">
           <li

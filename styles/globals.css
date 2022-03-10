@@ -17,4 +17,8 @@
     sm:px-3
     sm:py-2;
   }
+
+  .span-info {
+    @apply font-bold text-slate-400;
+  }
 }

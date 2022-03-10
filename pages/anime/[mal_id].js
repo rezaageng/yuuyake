@@ -1,8 +1,13 @@
+import AnimeInfo from "../../components/AnimeInfo"
 import AnimeSection from "../../components/AnimeSection"
 import { getJikan, getAnime } from "../../functions/fetchApi"
 
 function AnimeDetail({ anime }) {
-  return <AnimeSection anime={anime.data} />
+  return (
+    <>
+      <AnimeSection anime={anime.data} />
+    </>
+  )
 }
 
 export async function getStaticPaths() {
