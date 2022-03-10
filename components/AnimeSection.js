@@ -55,6 +55,9 @@ function AnimeSection({ anime }) {
           </div>
         </div>
       </div>
+      <div className="mt-6">
+        <p>{anime.synopsis}</p>
+      </div>
     </div>
   )
 }
