@@ -4,10 +4,10 @@ import { getJikan } from "../functions/fetchApi"
 
 function Home({ response }) {
   return (
-    <div className="m-auto min-h-screen bg-slate-900">
+    <>
       <Hero />
       <Anime anime={response} />
-    </div>
+    </>
   )
 }
 
