@@ -4,7 +4,7 @@ function Layout({ children }) {
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <Navbar />
-      <div className="mx-4 max-w-7xl xl:m-auto">
+      <div className="max-w-7xl p-4 xl:m-auto">
         <main>{children}</main>
       </div>
     </div>
