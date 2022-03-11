@@ -22,4 +22,15 @@ const getAnime = async (mal_id) => {
   }
 }
 
-export { getJikan, getAnime }
+const getTopAnime = async () => {
+  try {
+    const request = await axios.get("https://api.jikan.moe/v4/top/anime")
+    const response = request.data
+
+    return response
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export { getJikan, getAnime, getTopAnime }
