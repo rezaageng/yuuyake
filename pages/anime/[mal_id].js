@@ -1,4 +1,3 @@
-import AnimeInfo from "../../components/AnimeInfo"
 import AnimeSection from "../../components/AnimeSection"
 import { getJikan, getAnime } from "../../functions/fetchApi"
 
@@ -17,12 +16,16 @@ export async function getStaticPaths() {
     paths: anime.data.map((anm) => ({
       params: { mal_id: anm.mal_id.toString() },
     })),
-    fallback: true,
+    fallback: false,
   }
 }
 
 export async function getStaticProps({ params }) {
   const anime = await getAnime(params.mal_id)
+
+  if (!anime) {
+    return { notFound: true }
+  }
 
   return {
     props: { anime },
