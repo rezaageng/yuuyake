@@ -6,6 +6,7 @@ import AnimeInfo from "./AnimeInfo"
 function AnimeSection({ anime }) {
   const isMd = useMediaQuery({ query: "(min-width: 768px)" })
   const [info, setInfo] = useState(false)
+  const [src, setSrc] = useState(anime.trailer.images.maximum_image_url)
 
   return (
     <>
@@ -14,9 +15,7 @@ function AnimeSection({ anime }) {
         <div className="relative overflow-hidden rounded-t-xl">
           <Image
             src={
-              !anime.trailer.images.maximum_image_url
-                ? "/images/bg.png"
-                : anime.trailer.images.maximum_image_url
+              !anime.trailer.images.maximum_image_url ? "/images/bg.png" : src
             }
             width={1280}
             height={isMd ? 480 : 720}
@@ -24,6 +23,7 @@ function AnimeSection({ anime }) {
             layout="responsive"
             objectFit="cover"
             priority={true}
+            onError={() => setSrc("/images/bg.png")}
           />
           <div className="absolute bottom-0 h-52 w-full bg-gradient-to-t from-slate-900"></div>
         </div>
