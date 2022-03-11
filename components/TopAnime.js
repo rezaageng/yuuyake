@@ -10,7 +10,7 @@ function TopAnime({ anime }) {
             key={anm.mal_id}
             className="group cursor-pointer overflow-hidden rounded-xl border-b-2 border-b-transparent bg-slate-800 hover:border-b-rose-700"
           >
-            <Link href={`/top-anime/${anm.mal_id}`} passHref>
+            <Link href={`/anime/${anm.mal_id}`} passHref>
               <a>
                 <Image
                   src={anm.images.jpg.image_url}
@@ -24,7 +24,7 @@ function TopAnime({ anime }) {
                 />
               </a>
             </Link>
-            <Link href={`/top-anime/${anm.mal_id}`} passHref>
+            <Link href={`/anime/${anm.mal_id}`} passHref>
               <div className="flex gap-1">
                 <span className=" bg-indigo-700 py-2 px-3">{anm.rank}</span>
                 <p className="truncate  p-2">{anm.title}</p>

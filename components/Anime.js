@@ -11,7 +11,7 @@ function Anime({ anime }) {
             key={anm.mal_id}
             className="group cursor-pointer overflow-hidden rounded-xl border-b-2 border-b-transparent bg-slate-800 hover:border-b-rose-700"
           >
-            <Link href={`/airing/${anm.mal_id}`} passHref>
+            <Link href={`/anime/${anm.mal_id}`} passHref>
               <a>
                 <Image
                   src={anm.images.jpg.image_url}
@@ -25,7 +25,7 @@ function Anime({ anime }) {
                 />
               </a>
             </Link>
-            <Link href={`/airing/${anm.mal_id}`} passHref>
+            <Link href={`/anime/${anm.mal_id}`} passHref>
               <p className="truncate p-2">{anm.title}</p>
             </Link>
           </div>
