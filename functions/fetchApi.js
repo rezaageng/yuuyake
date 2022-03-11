@@ -12,6 +12,8 @@ const getJikan = async () => {
 }
 
 const getAnime = async (mal_id) => {
+  if (!mal_id) return
+
   try {
     const request = await axios.get(`https://api.jikan.moe/v4/anime/${mal_id}`)
     const response = request.data

@@ -1,36 +1,32 @@
+import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 import AnimeSection from "../../components/AnimeSection"
-import { getJikan, getAnime } from "../../functions/fetchApi"
+import { getAnime } from "../../functions/fetchApi"
 
-function AnimeDetail({ anime }) {
+function AnimeDetail() {
+  const [anime, setAnime] = useState([])
+  const [loading, setLoading] = useState(true)
+  const router = useRouter()
+
+  useEffect(() => {
+    const fetchAnime = async (mal_id) => {
+      const response = await getAnime(mal_id)
+      setAnime(response)
+      setLoading(false)
+    }
+
+    fetchAnime(router.query.mal_id)
+  }, [router.query.mal_id])
+
   return (
     <>
-      <AnimeSection anime={anime.data} />
+      {loading || !anime ? (
+        <h1>Loading</h1>
+      ) : (
+        <AnimeSection anime={anime.data} />
+      )}
     </>
   )
-}
-
-export async function getStaticPaths() {
-  const anime = await getJikan()
-
-  return {
-    paths: anime.data.map((anm) => ({
-      params: { mal_id: anm.mal_id.toString() },
-    })),
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({ params }) {
-  const anime = await getAnime(params.mal_id)
-
-  if (!anime) {
-    return { notFound: true }
-  }
-
-  return {
-    props: { anime },
-    revalidate: 10,
-  }
 }
 
 export default AnimeDetail
