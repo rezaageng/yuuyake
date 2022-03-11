@@ -1,7 +1,7 @@
 function AnimeInfo({ anime, setInfo }) {
   return (
     <div className="fixed top-0 left-0 z-10 grid h-screen w-full place-content-center bg-slate-700/75 p-4">
-      <div className="max-h-screen rounded-xl bg-slate-900 p-4">
+      <div className="max-h-screen max-w-lg rounded-xl bg-slate-900 p-4">
         <ul className="max-h-full overflow-auto ">
           <li>
             <span className="span-info">Title: </span>
