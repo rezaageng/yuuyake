@@ -13,7 +13,11 @@ function AnimeSection({ anime }) {
       <div className="bg-slate-900">
         <div className="relative overflow-hidden rounded-t-xl">
           <Image
-            src={anime.trailer.images.maximum_image_url}
+            src={
+              !anime.trailer.images.maximum_image_url
+                ? "/images/bg.png"
+                : anime.trailer.images.maximum_image_url
+            }
             width={1280}
             height={isMd ? 480 : 720}
             alt="banner"
