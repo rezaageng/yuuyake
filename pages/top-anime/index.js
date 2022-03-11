@@ -1,5 +1,5 @@
-import TopAnime from "../components/TopAnime"
-import { getTopAnime } from "../functions/fetchApi"
+import TopAnime from "../../components/TopAnime"
+import { getTopAnime } from "../../functions/fetchApi"
 
 function TopAnimeList({ response }) {
   return <TopAnime anime={response} />

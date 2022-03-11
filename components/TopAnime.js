@@ -24,7 +24,7 @@ function TopAnime({ anime }) {
                 />
               </a>
             </Link>
-            <Link href={`/anime/${anm.mal_id}`} passHref>
+            <Link href={`/top-anime/${anm.mal_id}`} passHref>
               <div className="flex gap-1">
                 <span className=" bg-indigo-700 py-2 px-3">{anm.rank}</span>
                 <p className="truncate  p-2">{anm.title}</p>
