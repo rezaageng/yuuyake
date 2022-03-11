@@ -1,3 +1,4 @@
+import Head from "next/head"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import AnimeSection from "../../components/AnimeSection"
@@ -23,7 +24,13 @@ function AnimeDetail() {
       {loading || !anime ? (
         <h1>Loading</h1>
       ) : (
-        <AnimeSection anime={anime.data} />
+        <>
+          <Head>
+            <title>{anime.data.title}</title>
+            <meta name="description" content={anime.data.synopsis} />
+          </Head>
+          <AnimeSection anime={anime.data} />
+        </>
       )}
     </>
   )
