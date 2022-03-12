@@ -15,8 +15,6 @@ function Navbar() {
     context.setData(response.data)
   }
 
-  console.log(context)
-
   return (
     <div className="sticky top-0 z-10 bg-slate-900/90 backdrop-blur-xl">
       <nav className="flex max-w-7xl p-4 py-4  text-white sm:gap-2  sm:py-6 xl:m-auto">
@@ -41,12 +39,15 @@ function Navbar() {
           onSubmit={(e) => {
             e.preventDefault()
             anime(keyword)
+            setKeyword("")
+            router.push("/search")
           }}
         >
           <input
             type="text"
             className="w-36 self-end rounded-md bg-slate-900 px-2 outline-none outline-offset-0 outline-rose-900 focus:outline-rose-700"
             placeholder="Search anime..."
+            value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
         </form>
