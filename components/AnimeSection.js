@@ -60,7 +60,7 @@ function AnimeSection({ anime }) {
                 href={anime.trailer.url}
                 target="_blank"
                 rel="noreferrer"
-                className={!anime.trailer.url && "hidden"}
+                className={!anime.trailer.url ? "hidden" : ""}
               >
                 <button className="cursor-pointer rounded-lg bg-rose-700 p-2 hover:bg-rose-800 hover:text-slate-400">
                   Watch Trailer
