@@ -2,6 +2,7 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import AnimeSection from "../../components/AnimeSection"
+import AnimeSectionSkeleton from "../../components/AnimeSectionSkeleton"
 import { getAnime } from "../../functions/fetchApi"
 
 function AnimeDetail() {
@@ -22,7 +23,12 @@ function AnimeDetail() {
   return (
     <>
       {loading || !anime ? (
-        <h1>Loading</h1>
+        <>
+          <Head>
+            <title>Yuuyake: Loading...</title>
+          </Head>
+          <AnimeSectionSkeleton />
+        </>
       ) : (
         <>
           <Head>
