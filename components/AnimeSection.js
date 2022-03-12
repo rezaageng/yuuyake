@@ -56,7 +56,12 @@ function AnimeSection({ anime }) {
               {anime.title}
             </h1>
             <div className="mt-2 flex justify-center gap-2 lg:justify-start">
-              <a href={anime.trailer.url} target="_blank" rel="noreferrer">
+              <a
+                href={anime.trailer.url}
+                target="_blank"
+                rel="noreferrer"
+                className={!anime.trailer.url && "hidden"}
+              >
                 <button className="cursor-pointer rounded-lg bg-rose-700 p-2 hover:bg-rose-800 hover:text-slate-400">
                   Watch Trailer
                 </button>
