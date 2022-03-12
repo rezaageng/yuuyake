@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { AppContext } from "../context/app-context"
 import { searchAnime } from "../functions/fetchApi"
 
@@ -13,6 +13,7 @@ function Navbar() {
     if (!query) return
     const response = await searchAnime(query)
     context.setData(response.data)
+    context.setLoading(false)
   }
 
   return (
@@ -40,7 +41,8 @@ function Navbar() {
             e.preventDefault()
             anime(keyword)
             setKeyword("")
-            router.push("/search")
+            context.setLoading(true)
+            router.push(`/search?q=${keyword}`)
           }}
         >
           <input

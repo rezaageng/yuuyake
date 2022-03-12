@@ -5,9 +5,10 @@ import "../styles/globals.css"
 
 function MyApp({ Component, pageProps }) {
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
 
   return (
-    <AppContext.Provider value={{ data, setData }}>
+    <AppContext.Provider value={{ data, setData, loading, setLoading }}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
