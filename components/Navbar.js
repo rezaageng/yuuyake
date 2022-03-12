@@ -1,8 +1,21 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { useContext, useEffect, useState } from "react"
+import { AppContext } from "../context/app-context"
+import { searchAnime } from "../functions/fetchApi"
 
 function Navbar() {
   const router = useRouter()
+  const context = useContext(AppContext)
+  const [keyword, setKeyword] = useState("")
+
+  const anime = async (query) => {
+    if (!query) return
+    const response = await searchAnime(query)
+    context.setData(response.data)
+  }
+
+  console.log(context)
 
   return (
     <div className="sticky top-0 z-10 bg-slate-900/90 backdrop-blur-xl">
@@ -23,11 +36,18 @@ function Navbar() {
             <Link href="/top-anime">Top Anime</Link>
           </li>
         </ul>
-        <form className="flex flex-1 flex-col justify-center">
+        <form
+          className="flex flex-1 flex-col justify-center"
+          onSubmit={(e) => {
+            e.preventDefault()
+            anime(keyword)
+          }}
+        >
           <input
             type="text"
             className="w-36 self-end rounded-md bg-slate-900 px-2 outline-none outline-offset-0 outline-rose-900 focus:outline-rose-700"
             placeholder="Search anime..."
+            onChange={(e) => setKeyword(e.target.value)}
           />
         </form>
       </nav>

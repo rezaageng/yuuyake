@@ -1,12 +1,17 @@
+import { useState } from "react"
 import Layout from "../components/Layout"
-import Navbar from "../components/Navbar"
+import { AppContext } from "../context/app-context"
 import "../styles/globals.css"
 
 function MyApp({ Component, pageProps }) {
+  const [data, setData] = useState([])
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <AppContext.Provider value={{ data, setData }}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AppContext.Provider>
   )
 }
 
