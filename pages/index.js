@@ -11,6 +11,7 @@ function Home({ response }) {
         <meta name="description" content="Anime database build with Next.js" />
       </Head>
       <Hero />
+      <h1 className="mt-4 text-xl font-semibold">Airing Anime</h1>
       <Anime anime={response} />
     </>
   )

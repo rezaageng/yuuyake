@@ -3,8 +3,7 @@ import Link from "next/link"
 
 function Anime({ anime }) {
   return (
-    <div className="mt-4 max-w-full">
-      <h1 className="text-xl font-semibold">Airing Anime</h1>
+    <div className="max-w-full">
       <div className="mt-2 grid w-full grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 md:gap-3 lg:grid-cols-7">
         {anime.data.map((anm) => (
           <div
