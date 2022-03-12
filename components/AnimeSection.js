@@ -39,7 +39,11 @@ function AnimeSection({ anime }) {
                 objectFit="cover"
               />
             </div>
-            <div className="absolute -bottom-1 right-0 left-0 flex items-center justify-center gap-2">
+            <div
+              className={`${
+                !anime.score ? "hidden" : ""
+              } absolute -bottom-1 right-0 left-0 flex items-center justify-center gap-2`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 fill-yellow-400 lg:h-6 lg:w-6"

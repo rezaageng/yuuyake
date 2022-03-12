@@ -50,7 +50,6 @@ function Navbar() {
             e.preventDefault()
             context.setLoading(true)
             router.push(`/search?q=${keyword}`)
-            anime(keyword)
             setKeyword("")
           }}
         >
