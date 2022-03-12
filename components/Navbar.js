@@ -9,7 +9,6 @@ function Navbar() {
   const context = useContext(AppContext)
   const [keyword, setKeyword] = useState("")
   const routerQuery = router.query.q
-  console.log(routerQuery)
 
   const anime = async (query) => {
     if (!query) return
