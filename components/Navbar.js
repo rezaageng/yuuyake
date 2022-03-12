@@ -48,8 +48,9 @@ function Navbar() {
           onSubmit={(e) => {
             e.preventDefault()
             context.setLoading(true)
-            router.push(`/search?q=${keyword}`)
+            anime(keyword)
             setKeyword("")
+            router.push(`/search?q=${keyword}`)
           }}
         >
           <input
