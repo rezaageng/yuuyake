@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { AppContext } from "../context/app-context"
 import { searchAnime } from "../functions/fetchApi"
 
@@ -8,13 +8,22 @@ function Navbar() {
   const router = useRouter()
   const context = useContext(AppContext)
   const [keyword, setKeyword] = useState("")
+  const routerQuery = router.query.q
+  console.log(routerQuery)
 
   const anime = async (query) => {
     if (!query) return
+
     const response = await searchAnime(query)
     context.setData(response.data)
     context.setLoading(false)
   }
+
+  useEffect(() => {
+    if (!routerQuery) return
+    anime(routerQuery)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [routerQuery])
 
   return (
     <div className="sticky top-0 z-10 bg-slate-900/90 backdrop-blur-xl">
@@ -39,10 +48,10 @@ function Navbar() {
           className="flex flex-1 flex-col justify-center"
           onSubmit={(e) => {
             e.preventDefault()
-            anime(keyword)
-            setKeyword("")
             context.setLoading(true)
             router.push(`/search?q=${keyword}`)
+            anime(keyword)
+            setKeyword("")
           }}
         >
           <input
