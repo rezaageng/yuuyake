@@ -55,7 +55,7 @@ function Navbar() {
         >
           <input
             type="text"
-            className="w-36 self-end rounded-md bg-slate-900 px-2 outline-none outline-offset-0 outline-rose-900 focus:outline-rose-700"
+            className="h-full w-36 self-end rounded-md bg-slate-900 px-2 outline-none outline-offset-0 outline-rose-900 focus:outline-rose-700 sm:h-8 sm:w-52"
             placeholder="Search anime..."
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
