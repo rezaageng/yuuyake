@@ -2,10 +2,14 @@ import ContentLoader from "react-content-loader"
 import { useMediaQuery } from "react-responsive"
 
 function AnimeSkeleton() {
+  const isSm = useMediaQuery({ query: "(max-width: 640px)" })
   const isMd = useMediaQuery({ query: "(min-width: 768px)" })
-  const skeleton = []
+  const isLg = useMediaQuery({ query: "(min-width: 1024px)" })
 
-  for (let i = 0; i < 21; i++) {
+  const skeleton = []
+  const mediaQuery = isLg || isSm ? 21 : 20
+
+  for (let i = 0; i < mediaQuery; i++) {
     skeleton.push(
       <div
         key={`skeleton${i}`}
