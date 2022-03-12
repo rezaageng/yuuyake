@@ -1,6 +1,8 @@
 import ContentLoader from "react-content-loader"
+import { useMediaQuery } from "react-responsive"
 
 function AnimeSkeleton() {
+  const isMd = useMediaQuery({ query: "(min-width: 768px)" })
   const skeleton = []
 
   for (let i = 0; i < 21; i++) {
@@ -12,7 +14,7 @@ function AnimeSkeleton() {
         <ContentLoader
           speed={1}
           width={225}
-          height={220}
+          height={isMd ? 240 : 190}
           backgroundColor="#1e293b"
           foregroundColor="#334155"
           style={{ width: "100%" }}
