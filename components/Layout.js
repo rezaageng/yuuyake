@@ -1,3 +1,4 @@
+import Footer from "./Footer"
 import Navbar from "./Navbar"
 
 function Layout({ children }) {
@@ -7,6 +8,7 @@ function Layout({ children }) {
       <div className="max-w-7xl p-4 xl:m-auto">
         <main>{children}</main>
       </div>
+      <Footer />
     </div>
   )
 }
