@@ -21,6 +21,7 @@ const getAnime = async (mal_id) => {
     return response
   } catch (error) {
     console.error(error)
+    return { err: true }
   }
 }
 

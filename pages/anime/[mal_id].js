@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import AnimeSection from "../../components/AnimeSection"
 import AnimeSectionSkeleton from "../../components/AnimeSectionSkeleton"
+import NotFound from "../../components/NotFound"
 import { getAnime } from "../../functions/fetchApi"
 
 function AnimeDetail() {
@@ -29,10 +30,12 @@ function AnimeDetail() {
           </Head>
           <AnimeSectionSkeleton />
         </>
+      ) : anime.err ? (
+        <NotFound />
       ) : (
         <>
           <Head>
-            <title>{anime.data.title}</title>
+            <title>{anime?.data?.title}</title>
             <meta name="description" content={anime.data.synopsis} />
           </Head>
           <AnimeSection anime={anime.data} />
